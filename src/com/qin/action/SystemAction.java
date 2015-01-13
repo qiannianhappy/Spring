@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.qin.dao.UserDaoImpl;
 import com.qin.entity.User;
+import com.qin.service.MenuServiceImpl;
 import com.qin.service.UserServiceImpl;
 import com.qin.util.UtilTools;
 
@@ -26,6 +27,7 @@ public class SystemAction {
     private  HttpServletRequest request;
     @Autowired
     private UserServiceImpl userServiceImpl;
+    private MenuServiceImpl menuServiceImpl;
     
 	@RequestMapping(value="/user")
 	public String userManage(){
@@ -49,7 +51,16 @@ public class SystemAction {
 		return "ÐÞ¸Ä³É¹¦";
 	}
 	
-	 
+	@RequestMapping(value="/menuList")
+	@ResponseBody
+	public Map<String, Object> menuList(){
+		List list = menuServiceImpl.getUserList();
+		Map<String, Object> modelMap = new HashMap<String, Object>(2);
+		modelMap.put("statusCode", 200);
+		modelMap.put("message", list);
+		return modelMap;
+	}
+	
 	@RequestMapping(value="/role")
 	public String roleManage(){
 		return "system/role";

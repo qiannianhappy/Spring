@@ -26,7 +26,7 @@
                                         <em>昨天</em>
                                     </span>
                                 </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                                <div>测试</div>
                             </a>
                         </li>
                         <li class="divider"></li>
@@ -261,5 +261,30 @@
 	</div>				 
     
     <script>
-		    	
+	    $(document).ready(function() {
+	    	getUserList();
+	        
+	    });
+	    
+	    function getUserList(){
+	    	jQuery.ajax( {  
+    	        type : 'GET',  
+    	        contentType : 'application/json',  
+    	        url : '../system/userList.action',  
+    	        dataType : 'json',  
+    	        success : function(data) {
+    	        	if (data.statusCode == 200) {
+		   	            $.each(data.message, function(i, item) {
+		   	              var editbutton="<button type='button' class='btn btn-info btn-xs'>修改</button>&nbsp;&nbsp;<button type='button' class='btn btn-warning btn-xs'>删除</button>";
+		   	              var str="<tr><td>"+item.USERNAME+"</td><td>"+item.FULLNAME+"</td><td></td><td></td><td></td><td>"+editbutton+"</td></tr>"
+		   	              $('#userList').append(str);  
+	   	            });
+	   	            $('#dataTables-example').dataTable();
+    	          }  
+    	        },  
+    	        error : function() {  
+    	          alert("error");
+    	        }  
+    	      });
+	    }
     </script>

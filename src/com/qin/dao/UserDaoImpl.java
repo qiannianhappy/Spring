@@ -21,8 +21,8 @@ public class UserDaoImpl {
 	
 	public User getUserInfo(String username,String password){
 		
-		String sql="select USERID,USERNAME,PASSWORD,FULLNAME,SEX,DEPT,DIVISION,SQUAD,CUSTOMER,ANALYSIS,PHONE,EMAIL,ACTIVEFLAG,CREATEDATE " +
-				"from gfs_user where username=? and password=?";
+		String sql="select USERID,USERNAME,PASSWORD,FULLNAME,SEX,PHONE,EMAIL,ACTIVEFLAG,CREATEDATE " +
+				"from sys_user where username=? and password=?";
 		try{
 			return jdbcTemplate.queryForObject(sql, new Object[]{username,password},new userMapper());
 		}catch (EmptyResultDataAccessException e) {
@@ -32,8 +32,8 @@ public class UserDaoImpl {
 	
 	public List<Map<String,Object>> getUserList(){
 		
-		String sql="select USERID,USERNAME,PASSWORD,FULLNAME,SEX,DEPT,DIVISION,SQUAD,CUSTOMER,ANALYSIS,PHONE,EMAIL,ACTIVEFLAG,CREATEDATE " +
-				"from gfs_user";
+		String sql="select USERID,USERNAME,PASSWORD,FULLNAME,SEX,PHONE,EMAIL,ACTIVEFLAG,CREATEDATE " +
+				"from sys_user";
 		List<Map<String,Object>> list = jdbcTemplate.queryForList(sql);
 		return list;
 	}
@@ -47,11 +47,6 @@ public class UserDaoImpl {
 			user.setPassword(rs.getString("password"));
 			user.setFullname(rs.getString("fullname"));
 			user.setSex(rs.getString("sex"));
-			user.setDept(rs.getString("dept"));
-			user.setDivision(rs.getString("division"));
-			user.setSquad(rs.getString("squad"));
-			user.setCustomer(rs.getString("customer"));
-			user.setAnalysis(rs.getString("analysis"));
 			user.setPhone(rs.getString("phone"));
 			user.setEmail(rs.getString("email"));
 			user.setActiveflag(rs.getString("activeflag"));

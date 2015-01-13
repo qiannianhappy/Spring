@@ -54,7 +54,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">用户列表</h1>
+                    <h1 class="page-header">添加用户</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -104,37 +104,6 @@
     <script src="../js/plugins/dataTables/jquery.dataTables.js"></script>
     <script src="../js/plugins/dataTables/dataTables.bootstrap.js"></script>
     <script>
-	  	// 默认禁用搜索和排序
-	     $.extend( $.fn.dataTable.defaults, {
-	         searching: false,
-	         ordering:  false
-	     } );
-	    $(document).ready(function() {
-	    	getUserList();
-	        
-	    });
-	    
-	    function getUserList(){
-	    	jQuery.ajax( {  
-    	        type : 'GET',  
-    	        contentType : 'application/json',  
-    	        url : '../system/userList.action',  
-    	        dataType : 'json',  
-    	        success : function(data) {
-    	        	if (data.statusCode == 200) {
-		   	            $.each(data.message, function(i, item) {
-		   	              var editbutton="<button type='button' class='btn btn-info btn-xs'>修改</button>&nbsp;&nbsp;<button type='button' class='btn btn-warning btn-xs'>删除</button>";
-		   	              var str="<tr><td>"+item.USERNAME+"</td><td>"+item.FULLNAME+"</td><td></td><td></td><td></td><td>"+editbutton+"</td></tr>"
-		   	              $('#userList').append(str);  
-	   	            });
-	   	            $('#dataTables-example').dataTable();
-    	          }  
-    	        },  
-    	        error : function() {  
-    	          alert("error");
-    	        }  
-    	      });
-	    }
     </script>
 
 </body>

@@ -29,7 +29,7 @@
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
    		destroy-method="close"
    		p:driverClassName="oracle.jdbc.driver.OracleDriver"
-   		p:url="jdbc:oracle:thin:@localhost:1521:orcl"
+   		p:url="jdbc:oracle:thin:@localhost:1521:report"
    		p:username="scott"
    		p:password="tiger"
    		p:minIdle="5" 
