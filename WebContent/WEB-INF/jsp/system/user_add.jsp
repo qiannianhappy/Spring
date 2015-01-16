@@ -54,7 +54,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">添加用户</h1>
+                    <h1 class="page-header">用户列表</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -63,30 +63,58 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            	用户信息列表
+                            	用户信息添加
                             	<div class="pull-right">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-success btn-xs">添加</button>
-                                </div>
+                               
                             </div>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                   <thead>
-                                       <tr>
-                                           <th>用户名</th>
-                                           <th>姓名</th>
-                                           <th>部门</th>
-                                           <th>角色</th>
-                                           <th>账户状态</th>
-                                           <th>操作</th>
-                                       </tr>
-                                   </thead>
-                                   <tbody id="userList">
-                                      
-                                   </tbody>
-                               </table>
+                       	 	<form role="form">
+                        		<div class="col-lg-6">
+                                      <div class="form-group">
+                                          <label>用户名</label>
+                                          <input type="text" class="form-control" placeholder="用户名">
+                                      </div>
+                                      <div class="form-group">
+                                          <label>密&nbsp;&nbsp;码</label>
+                                          <input type="text" class="form-control" placeholder="密码">
+                                      </div>
+                                      <div class="form-group">
+                                          <label>真实姓名</label>
+                                          <input type="text" class="form-control" placeholder="真实姓名">
+                                      </div>
+                                      <div class="form-group">
+                                          <label>性 别&nbsp;&nbsp;</label>
+                                          <label class="radio-inline">
+                                              <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked>男
+                                          </label>
+                                          <label class="radio-inline">
+                                              <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">女
+                                          </label>
+                                      </div>
+                                      <button type="submit" class="btn btn-outline btn-primary">提 交</button>
+                                 </div>
+                                 <div class="col-lg-6">
+                                      <div class="form-group">
+                                          <label>电 话</label>
+                                          <input type="text" class="form-control" placeholder="电话">
+                                      </div>
+                                      <div class="form-group">
+                                          <label>邮 箱</label>
+                                          <input type="text" class="form-control" placeholder="邮箱">
+                                      </div>
+                                      <div class="form-group">
+                                          <label>账户状态</label>
+                                          <label class="radio-inline">
+                                              <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked>正常
+                                          </label>
+                                          <label class="radio-inline">
+                                              <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">注销
+                                          </label>
+                                      </div>
+                                 </div>
+                              </form>
                         </div>
                         <!-- /.panel-body -->
                     </div>
@@ -104,6 +132,7 @@
     <script src="../js/plugins/dataTables/jquery.dataTables.js"></script>
     <script src="../js/plugins/dataTables/dataTables.bootstrap.js"></script>
     <script>
+	  	
     </script>
 
 </body>

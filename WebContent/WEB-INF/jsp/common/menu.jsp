@@ -242,11 +242,11 @@
 	
 	<!-- Message -->
 	<div class="modal fade" id="Message" tabindex="-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	  <div class="modal-dialog">
+	  <div class="modal-dialog modal-lg">
 		<div class="modal-content">
 		  <div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-			<h4 class="modal-title" id="myModalLabel"><i class="fa icon-search"></i>信息</h4>
+			<h4 class="modal-title" id="myModalLabel">信息</h4>
 		  </div>
 		  <div class="modal-body">
 				<div id="showMessage">
@@ -262,28 +262,24 @@
     
     <script>
 	    $(document).ready(function() {
-	    	getUserList();
+	    	getMenuList();
 	        
 	    });
 	    
-	    function getUserList(){
+	    function getMenuList(){
 	    	jQuery.ajax( {  
     	        type : 'GET',  
     	        contentType : 'application/json',  
-    	        url : '../system/userList.action',  
+    	        url : '<%=request.getContextPath()%>/common/menuList.action',  
     	        dataType : 'json',  
     	        success : function(data) {
-    	        	if (data.statusCode == 200) {
-		   	            $.each(data.message, function(i, item) {
-		   	              var editbutton="<button type='button' class='btn btn-info btn-xs'>修改</button>&nbsp;&nbsp;<button type='button' class='btn btn-warning btn-xs'>删除</button>";
-		   	              var str="<tr><td>"+item.USERNAME+"</td><td>"+item.FULLNAME+"</td><td></td><td></td><td></td><td>"+editbutton+"</td></tr>"
-		   	              $('#userList').append(str);  
-	   	            });
-	   	            $('#dataTables-example').dataTable();
-    	          }  
+    	        	//alert(JSON.stringify(data))
+    	        	$('#showMessage').html(JSON.stringify(data));
+    	        	//$('#Message').modal('show');
+    	        	//alert(JSON.stringify(data));
     	        },  
-    	        error : function() {  
-    	          alert("error");
+    	        error : function() { 
+    	          	alert("error");
     	        }  
     	      });
 	    }

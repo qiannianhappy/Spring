@@ -14,7 +14,7 @@ public class MenuServiceImpl {
 	@Autowired
 	private MenuDaoImpl menuDaoImpl;
 	
-	public List<Map<String,Object>> getUserList(){
+	public List<Map<String,Object>> getMenuList(){
 		return menuDaoImpl.getMenuList();
 	}
 }

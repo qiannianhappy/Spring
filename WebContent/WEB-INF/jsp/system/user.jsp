@@ -66,7 +66,7 @@
                             	用户信息列表
                             	<div class="pull-right">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-success btn-xs">添加</button>
+                                    <button type="button" class="btn btn-success btn-xs" onclick="javascript:location.href='userAdd.action'">添加</button>
                                 </div>
                             </div>
                         </div>

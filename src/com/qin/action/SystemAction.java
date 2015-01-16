@@ -5,19 +5,13 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.qin.dao.UserDaoImpl;
-import com.qin.entity.User;
-import com.qin.service.MenuServiceImpl;
 import com.qin.service.UserServiceImpl;
-import com.qin.util.UtilTools;
 
 @Controller
 @RequestMapping(value="/system")
@@ -27,7 +21,6 @@ public class SystemAction {
     private  HttpServletRequest request;
     @Autowired
     private UserServiceImpl userServiceImpl;
-    private MenuServiceImpl menuServiceImpl;
     
 	@RequestMapping(value="/user")
 	public String userManage(){
@@ -46,19 +39,14 @@ public class SystemAction {
 		return modelMap;
 	}
 	
+	@RequestMapping(value="/userAdd")
+	public String userAdd(){
+		return "system/user_add";
+	}
+	
 	@RequestMapping(value="/passwordModify")
 	public @ResponseBody String passwordModify(){
 		return "ÐÞ¸Ä³É¹¦";
-	}
-	
-	@RequestMapping(value="/menuList")
-	@ResponseBody
-	public Map<String, Object> menuList(){
-		List list = menuServiceImpl.getUserList();
-		Map<String, Object> modelMap = new HashMap<String, Object>(2);
-		modelMap.put("statusCode", 200);
-		modelMap.put("message", list);
-		return modelMap;
 	}
 	
 	@RequestMapping(value="/role")
