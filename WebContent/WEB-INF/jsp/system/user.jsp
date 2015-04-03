@@ -49,7 +49,7 @@
 
     <div id="wrapper" class="container-fluid">
 		
-		<jsp:include  page="../common/menu.jsp"/>
+		<jsp:include  page="../common/menu.jsp"><jsp:param name="menuNo" value="M009"/></jsp:include>
 
         <div id="page-wrapper">
             <div class="row">

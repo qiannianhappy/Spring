@@ -68,7 +68,7 @@
                                 <div class="form-group">
                                     <input type="password" class="form-control" placeholder="密码" name="password"/>
                                 </div>
-                                <div class="form-group" stlye="display:inline;">
+                                <div class="form-group">
                                     <input type="text"  class="form-control" placeholder="验证码" style="display:inline;width:100px;" name="checkcode"/>
 									<img src="authImg" name="authImg" onClick="this.src=this.name+'?t='+Math.random();" alt="点击刷新" style="cursor:pointer;position:relative;left:10%;" />
                                 </div>

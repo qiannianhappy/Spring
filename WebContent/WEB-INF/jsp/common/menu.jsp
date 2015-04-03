@@ -217,18 +217,18 @@
 			<h4 class="modal-title" id="myModalLabel">修改密码</h4>
 		  </div>
 		  <div class="modal-body">
-			<form role="form">
+			<form role="form" class="form-horizontal">
 	          <div class="form-group">
-	            <label for="recipient-name" class="control-label">原密码:</label>
-	            <input type="text" class="form-control" id="recipient-name">
+	            <label for="recipient-name" class="col-lg-3 control-label">原密码:</label>
+	            <div class="col-lg-6"><input type="text" class="form-control" id="recipient-name"></div>
 	          </div>
 	          <div class="form-group">
-	            <label for="recipient-name" class="control-label">新密码:</label>
-	            <input type="text" class="form-control" id="recipient-name">
+	            <label for="recipient-name" class="col-lg-3 control-label">新密码:</label>
+	            <div class="col-lg-6"><input type="text" class="form-control" id="recipient-name"></div>
 	          </div>
 	          <div class="form-group">
-	            <label for="recipient-name" class="control-label">确认新密码:</label>
-	            <input type="text" class="form-control" id="recipient-name">
+	            <label for="recipient-name" class="col-lg-3 control-label">确认新密码:</label>
+	            <div class="col-lg-6"><input type="text" class="form-control" id="recipient-name"></div>
 	          </div>
 	        </form>
 		  </div>
