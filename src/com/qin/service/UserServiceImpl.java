@@ -19,6 +19,10 @@ public class UserServiceImpl {
 		return userDaoImpl.getUserInfo(username, password);
 	}
 	
+	public User getUserInfo(String userid){
+		return userDaoImpl.getUserInfo(userid);
+	}
+	
 	public List<Map<String,Object>> getUserList(){
 		return userDaoImpl.getUserList();
 	}

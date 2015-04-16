@@ -38,6 +38,17 @@ public class UserDaoImpl {
 		return list;
 	}
 	
+	public User getUserInfo(String userid){
+		
+		String sql="select USERID,USERNAME,PASSWORD,FULLNAME,SEX,PHONE,EMAIL,ACTIVEFLAG,CREATEDATE " +
+				"from sys_user where userid= ?";
+		try{
+			return jdbcTemplate.queryForObject(sql, new Object[]{userid},new userMapper());
+		}catch (EmptyResultDataAccessException e) {
+			return null;
+		}
+	}
+	
 	 class userMapper implements RowMapper {  
 		  
 		  public User mapRow(ResultSet rs, int rowNum) throws SQLException {  

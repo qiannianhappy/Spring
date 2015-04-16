@@ -45,7 +45,7 @@
 
     <div id="wrapper" class="container-fluid">
 
-        <jsp:include  page="common/menu.jsp"/>
+        <jsp:include  page="common/menu.jsp"  flush="true"/>
 
         <div id="page-wrapper">
             <div class="row">

@@ -154,7 +154,7 @@
 		                <!-- /input-group -->
 		            </li>
 		            <li>
-		                <a class="active" href="<%=request.getContextPath()%>/index.action"><i class="fa fa-home"></i> 主页</a>
+		                <a href="<%=request.getContextPath()%>/index.action"><i class="fa fa-home"></i> 主页</a>
 		            </li>
 		            <li>
 					     <a href="#"><i class="fa fa-folder-o"></i> 系统管理<span class="fa arrow"></span></a>

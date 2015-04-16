@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.qin.entity.User;
 import com.qin.service.UserServiceImpl;
 
 @Controller
@@ -42,6 +43,13 @@ public class SystemAction {
 	@RequestMapping(value="/userAdd")
 	public String userAdd(){
 		return "system/user_add";
+	}
+	
+	@RequestMapping(value="/userEdit")
+	public String userEdit(String userid){
+		User user=userServiceImpl.getUserInfo(userid);
+		request.setAttribute("User", user);
+		return "system/user_edit";
 	}
 	
 	@RequestMapping(value="/passwordModify")

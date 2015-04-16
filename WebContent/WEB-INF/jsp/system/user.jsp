@@ -66,7 +66,7 @@
                             	用户信息列表
                             	<div class="pull-right">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-success btn-xs" onclick="javascript:location.href='userAdd.action'">添加</button>
+                                    <a class="btn btn-success btn-xs" href="userAdd.action">添加</a>
                                 </div>
                             </div>
                         </div>
@@ -123,7 +123,7 @@
     	        success : function(data) {
     	        	if (data.statusCode == 200) {
 		   	            $.each(data.message, function(i, item) {
-		   	              var editbutton="<button type='button' class='btn btn-info btn-xs'>修改</button>&nbsp;&nbsp;<button type='button' class='btn btn-warning btn-xs'>删除</button>";
+		   	              var editbutton="<a class='btn btn-info btn-xs' href='userEdit.action?userid='"+item.USERID+">修改</a>&nbsp;&nbsp;<a class='btn btn-warning btn-xs'>删除</a>";
 		   	              var str="<tr><td>"+item.USERNAME+"</td><td>"+item.FULLNAME+"</td><td></td><td></td><td></td><td>"+editbutton+"</td></tr>"
 		   	              $('#userList').append(str);  
 	   	            });

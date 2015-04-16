@@ -25,7 +25,8 @@
      <mvc:interceptors>  
         <!-- 多个拦截器,顺序执行 -->  
         <mvc:interceptor>  
-           <mvc:mapping path="/*" /><!-- 如果不配置或/*,将拦截所有的Controller -->  
+           <mvc:mapping path="/index.action" /><!-- 如果不配置或/*,将拦截所有的Controller -->  
+           <mvc:mapping path="/*/*" /><!-- 如果不配置或/*,将拦截所有的Controller -->  
            <bean class="com.qin.action.CommonInterceptor"></bean>  
         </mvc:interceptor>  
     </mvc:interceptors>  
